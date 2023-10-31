@@ -1,5 +1,6 @@
 import streamlit as st
 import joblib
+import pandas as pd
 
 model = joblib.load('careermodel.pkl')
 
@@ -69,16 +70,16 @@ def main():
             st.write(f"Perception Style: {'Perceiver' if perception_Perceiver else 'Judger'}")
             st.write(f"Thought Process: {'Intuition' if thought_Sensing else 'Sensing'}")
 
-    st.markdown(
-        """
-        <div style="text-align:center; margin-top: 50px;">
-            <span style="font-size: 18px;">Made with ❤️ by <strong>Team CareerX @ SIH 2023</strong></span> <br>
-        </div>
-        <br>
-        """,
-        unsafe_allow_html=True
-    )
+    df = pd.read_csv('data.csv')
 
+    selected_tab = st.selectbox("Select a tab:", ["Data Display", "Data Visualisation", "Bar Chart"])
+    if selected_tab == "Data Display":
+        st.dataframe(df)
+    elif selected_tab == "Data Visualisation":
+        st.line_chart(df)
+    elif selected_tab == "Bar Chart":
+        st.bar_chart(df)
+        
     st.markdown(
     """
     **Next.js Web App and FastAPI Endpoint**
@@ -88,6 +89,16 @@ def main():
     [GitHub Repository](https://github.com/rsashank/CareerX)
     """,
     unsafe_allow_html=True
+    )
+
+    st.markdown(
+        """
+        <div style="text-align:center; margin-top: 50px;">
+            <span style="font-size: 18px;">Made with ❤️ by <strong>Team CareerX @ SIH 2023</strong></span> <br>
+        </div>
+        <br>
+        """,
+        unsafe_allow_html=True
     )
 
 if __name__ == '__main__':
