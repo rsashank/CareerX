@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import DefaultLayout from '../DefaultLayout';
 
 export default function Result() {
   const router = useRouter();
@@ -67,6 +68,7 @@ export default function Result() {
   };
 
   return (
+    <DefaultLayout>
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 to-blue-700">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
@@ -74,12 +76,12 @@ export default function Result() {
             <div className="mt-4 pr-3">
               <Image src="/careerxdark.png" alt="CareerX Logo" width={600} height={180} />
             </div>
-            <p className="max-w-xl text-3xl text-white font-bold">
+            <p class="mb-8 leading-relaxed text-gray-200 sm:text-3xl">
               Thanks for putting your trust with CareerX. Here is your guidance report.
             </p>
           </div>
           <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12 text-gray-800 text-lg">
-          <h2 className="text-2xl font-semibold mb-4">Form Input Results</h2>
+          <h2 className="text-3xl font-semibold mb-4">Form Input Results</h2>
           <div className="grid grid-cols-2 gap-2">
             <div>
               <p className="text-xl font-bold">Name:</p>
@@ -133,5 +135,6 @@ export default function Result() {
         </div>
       </div>
     </section>
+    </DefaultLayout>
   );
 }
