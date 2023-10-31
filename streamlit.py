@@ -24,7 +24,7 @@ def make_prediction(lr_score, personality_Introverted, thinking_Thinker, percept
     return predictions[0]
 
 def main():
-    
+
     st.title("CareerX - Artificial Intelligence based Career Counselling")
 
     personality_Introverted = st.radio("Personality Type (Introverted/Extroverted)", ("Introverted", "Extroverted"))
@@ -74,8 +74,20 @@ def main():
         <div style="text-align:center; margin-top: 50px;">
             <span style="font-size: 18px;">Made with ❤️ by <strong>Team CareerX @ SIH 2023</strong></span> <br>
         </div>
+        <br>
         """,
         unsafe_allow_html=True
+    )
+
+    st.markdown(
+    """
+    **Next.js Web App and FastAPI Endpoint**
+
+    Explore our CareerX web application, which includes a Next.js web app for the frontend and a FastAPI endpoint for the backend. You can find the source code on GitHub:
+
+    [GitHub Repository](https://github.com/rsashank/CareerX)
+    """,
+    unsafe_allow_html=True
     )
 
 if __name__ == '__main__':
