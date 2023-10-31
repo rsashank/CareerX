@@ -3,4 +3,4 @@ numpy
 joblib
 pydantic
 streamlit
-sklearn
+scikit-learn
