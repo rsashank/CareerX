@@ -34,7 +34,7 @@ const DefaultLayout = ({ children }) => {
     <p
       class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400"
     >
-Fill in the form to get detailed Artificial Intelligence based Career Guidance.
+<strong>Team CareerX @ Smart India Hackathon '2023</strong>
     </p>
 
     <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
