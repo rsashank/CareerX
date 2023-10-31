@@ -2,10 +2,10 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Header from './Header';
-import DefaultLayout from './DefaultLayout';
+import Header from '../Header';
+import DefaultLayout from '../DefaultLayout';
 
-export default function Home() {
+export default function home() {
   const router = useRouter();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -46,22 +46,11 @@ export default function Home() {
   };
 
   return (
-    <DefaultLayout>
 
 
-<section className="min-h-screen flex items-center justify-center bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-          <div className="lg:col-span-2 lg:py-12">
-            <div className="mt-4">
-              <Image src="/careerx.png" alt="CareerX Logo" width={600} height={180} />
-            </div>
-            <p class="mb-8 leading-relaxed text-gray-900 sm:text-3xl">
-              Fill in the form to get detailed Artificial Intelligence based Career Guidance!
-            </p>
-          </div>
 
-          <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+//FORM SECTION
+<div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
           <label className="text-base font-bold text-black">Name</label>
           <form action="" className="space-y-4" onSubmit={handleSubmit}>
               <div>
@@ -208,9 +197,7 @@ export default function Home() {
               </div>  
             </form>
           </div>
-        </div>
-      </div>
-    </section>
-    </DefaultLayout>
+
+          //END OF FORM
   );
-  }
+}
